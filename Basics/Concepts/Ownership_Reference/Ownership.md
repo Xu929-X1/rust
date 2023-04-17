@@ -132,8 +132,7 @@ fn take_ownership(some_string: String){
 }
 ```
 
-If we wish to use the variable `s` after the function execution, we can return
-the value so that we could use it after the function:
+If we wish to use the value that the variable `s` holds after the function execution, we can return the value so that we could use it after the function:
 
 ```rust
 fn main(){
