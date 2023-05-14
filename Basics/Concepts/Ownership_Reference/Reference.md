@@ -112,11 +112,12 @@ fn thread_two(s: &mut String){
 In this fashion, ```thread_one``` and ```thread_two``` are running in parallel, but there's no guarentee on how long they will take. So eventually, the value of ```s``` could be either the result of ```thread_one``` or ```thread_two```.
 
 This, instead of race condition, has another name ```data race```, it will happen in the following conditions:
+
 - Two or more pointers access the same data at the same time.
 - At least one of the pointers is being used to write to the data.
 - There’s no mechanism being used to synchronize access to the data.
 
-We could use the block scope to avoid the data race: 
+We could use the block scope to avoid the data race:
 
 ```rust
 let mut s = String::from("hello");
@@ -127,7 +128,7 @@ let mut s = String::from("hello");
 let r2 = &mut s;
 ```
 
-Also, the mutable reference cannot combine with the usage of immutable reference: 
+Also, the mutable reference cannot combine with the usage of immutable reference:
 
 ```diff
 - The following code will not compile
@@ -141,7 +142,7 @@ let s_ref_two = &s;//no problem here
 let s_ref_mut_one = &mut s;//this will panic
 ```
 
-This is because the user of the immutable reference would not like the value to change under their nose. Just like React's state, one reference can only have one version at one time. Reference's scope starts with the time that it is introduced and ended where it is lastly used, so we could have a mutable reference after the immutable reference has been used: 
+This is because the user of the immutable reference would not like the value to change under their nose. Just like React's state, one reference can only have one version at one time. Reference's scope starts with the time that it is introduced and ended where it is lastly used, so we could have a mutable reference after the immutable reference has been used:
 
 ```rust
 let mut s = String::from("whatever");
@@ -153,7 +154,7 @@ println!("{} and {} are used!", s_ref_one, s_ref_two);
 let s_ref_mut_one = &mut s;//this is ok
 ```
 
-A quick summary of what we just learned: 
+A quick summary of what we just learned:
 
 - At any given time, you can have either one mutable reference or any number of immutable references.
 - References must always be valid.
