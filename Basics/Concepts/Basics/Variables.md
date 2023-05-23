@@ -1,8 +1,8 @@
-# Common Programming Concepts - Variables 
+# Common Programming Concepts - Variables
 
-## Varaibles
+## Variables
 
-1. Inmmutability
+1. Immutability
 
 - Variables in Rust are immutable by default, but we can use:
 
@@ -19,7 +19,7 @@ Constants does not allow using `mut`. And the type of a constant must be
 annotated, like:
 
 ```rust
-const MINITES_IN_FIVE_HOURS : u32 = 5 * 60;
+const MINUTES_IN_FIVE_HOURS : u32 = 5 * 60;
 ```
 
 A convention is that for constant, we use all uppercase names.
@@ -37,11 +37,11 @@ fn main(){
         let x = x * 2;
         println!("The value of the inner scope is {}", x);//12
     }
-    println!("The value of the outter scope is {}", x);//6
+    println!("The value of the outer scope is {}", x);//6
 }
 ```
 
-The key difference between shadowing and mutable variable declaration is that the shadowing, since it is declaring a new variable, is able to change the variable's type: 
+The key difference between shadowing and mutable variable declaration is that the shadowing, since it is declaring a new variable, is able to change the variable's type:
 
 ```rust
 fn main(){
@@ -49,7 +49,7 @@ fn main(){
     let length = "length";
     let length = length.len();
 
-    //this will cause type error, as length was previously a string type, and now tring to assign a number type to it
+    //this will cause type error, as length was previously a string type, and now trying to assign a number type to it
     let mut length = "length";
     length = length.len(); //error
 }
