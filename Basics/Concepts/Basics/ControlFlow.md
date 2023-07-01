@@ -41,7 +41,7 @@ Instead of `while` and `for` loop, rust also provides a `loop` loop:
 
 - Loop
 
-Loop, like `while(true)`, will not stop until you told it so, to programatically
+Loop, like `while(true)`, will not stop until you told it so, to programmatically
 tell the loop to stop and return a value, we can use `break`:
 
 ```rust

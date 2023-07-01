@@ -8,7 +8,7 @@ There are 4 scalar types in Rust: int, float, bool and char.
 
 - Integer Type
 
-|  Legth  | Signed | Unsigned |                      Comment                      |
+|  Length  | Signed | Unsigned |                      Comment                      |
 | :-----: | :----: | :------: | :-----------------------------------------------: |
 |  8-bit  |   i8   |    u8    |                                                   |
 | 16-bit  |  i16   |   u16    |                                                   |
